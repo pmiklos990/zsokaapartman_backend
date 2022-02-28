@@ -1,8 +1,9 @@
 import express from "express";
 const app = express();
+const port = process.env.PORT || 4000;
 import bodyParser from "body-parser";
 import cors from "cors";
-const PORT = 4000;
+
 import mongoose from "mongoose";
 const reservationRoutes = express.Router();
 
@@ -107,7 +108,7 @@ reservationRoutes.route('/delete/:id').post(function(req, res) {
 
 
 
-    app.listen(PORT, function() {
-        console.log("Server is running on Port: " + PORT);
+    app.listen(port, function() {
+        console.log("Server is running on Port: " + port);
     });
 
